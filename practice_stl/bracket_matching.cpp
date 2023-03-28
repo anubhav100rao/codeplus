@@ -12,7 +12,8 @@ public:
             if(ch == '{' || ch == '(' || ch == '[') st.push(ch);
             else {
                 if(st.size() == 0) return false;
-                if((ch == ')' and st.top() == '(') || (ch == '}' and st.top() == '{') || (ch == ']' and st.top() == '[')) st.pop();
+                if((ch == ')' and st.top() == '(') || (ch == '}' and st.top() == '{') || (ch == ']' and st.top() == '['))
+                    st.pop();
                 else return false;
             } 
         }
