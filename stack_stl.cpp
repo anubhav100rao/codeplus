@@ -8,7 +8,7 @@ int main() {
     st.push(2);
     st.push(3);
 
-    // we can also something like this: stack<int>st({1, 2, 3});
+    // we can also do something like this: stack<int>st({1, 2, 3});
 
     cout << st.top() << "\n"; // "3" this gives the top element element of stack
 

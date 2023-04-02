@@ -6,19 +6,31 @@ using namespace std;
 #define int long long
  
 signed main() {
+  
+  	
 	int n; cin >> n;
-  	map<int, int>fre;
-  	for(int i = 0, x = 0; i < n; i++) {
-    	cin >> x;
-      	fre[x]++;
-    }
-  
-  	int res = 0;
-  	for(auto [a, b]: fre) {
-    	if(b < a) res += b;
-      	else res += b - a;
-    }
-  
-  	cout << res;
- 
+	vector<int>arr(n);
+	for(int &i: arr) cin >> i;
+	
+	vector<int>fre(*max_element(arr.begin(), arr.end()) + 1, 0);
+
+	for(int i: arr) fre[i]++;
+
+	int res = 0;
+	int mx = *max_element(arr.begin(), arr.end());
+	for(int i = 0; i <= mx; i++) {
+		int a = i;
+		int b = fre[i];
+
+		if(b < a) {
+			res += b;
+		} else {
+			res += b - a;
+		}
+	}
+
+	cout << res;
+
+	cout << res;
+
 }
